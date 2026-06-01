@@ -73,7 +73,7 @@ iframe, video {
   --header-height: 4rem;           /* Altura fixa do header */
 
   /* Cores */
-  --black-color: hsl(220, 24%, 12%);
+  --black-color: hsl(0, 0%, 0%);
   --black-color-light: hsl(220, 24%, 15%);
   --black-color-lighten: hsl(220, 20%, 18%);
   --white-color: #fff;
@@ -181,7 +181,7 @@ h6, .h6 { font-size: 1.2rem; }
    ============================================= */
 
 /* O header ocupa sempre 100% da largura */
-/* CORREÇÃO: pageWidth foi retirado do header e colocado no <nav> por dentro */
+
 #topHeader {
   background-color: #6200a2;
   box-shadow: 0 2px 10px rgba(155, 0, 244, 0.5);
@@ -208,7 +208,7 @@ h6, .h6 { font-size: 1.2rem; }
    NAVACTION — agrupa logo + botão burger
    ============================================= */
 
-/* CORREÇÃO: .navAction foi adicionado ao CSS (existia no HTML mas não tinha estilo) */
+
 .navAction {
   display: flex;
   align-items: center;
@@ -228,7 +228,7 @@ h6, .h6 { font-size: 1.2rem; }
    LOGO
    ============================================= */
 
-/* CORREÇÃO: era .logo .logo-icon img — agora alinhado com o HTML: #headerLogo a img */
+
 #headerLogo a img {
   height: 40px;
   width: auto;
@@ -243,14 +243,14 @@ h6, .h6 { font-size: 1.2rem; }
 
 
 /* =============================================
-   BOTÃO BURGER (toggle) — só visível em mobile
+   BOTÃO BURGER (toggle) — só visível em mobile e Tablet
    ============================================= */
 
 .nav__toggle {
   display: flex;
   align-items: center;
   cursor: pointer;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   color: var(--white-color);
   padding: 4px;
 }
@@ -281,19 +281,19 @@ h6, .h6 { font-size: 1.2rem; }
    NAV MENU — lista de links
    ============================================= */
 
-/* Mobile e Tablet */
-.nav__menu {
+/* Quando fica Mobile e Tablet é o Menu em baixo do Burguer*/
+.nav__menu { 
   display: none;
   position: fixed;
   top: var(--header-height);
   left: 0;
   width: 100%;
   background-color: #6200a2;
-  padding: 24px 16px 40px;
+  padding: 24px 16px 20px;
   z-index: 200;
 }
 
-/* Quando o JS adiciona .show-menu */
+
 .nav__menu.show-menu {
   display: block;
 }
@@ -304,7 +304,7 @@ h6, .h6 { font-size: 1.2rem; }
     display: block;
     position: static;
     width: auto;
-    padding: 0;
+    padding: 80px;
     background-color: transparent;
   }
 
@@ -315,14 +315,14 @@ h6, .h6 { font-size: 1.2rem; }
    NAV LIST — os itens de menu
    ============================================= */
 
-/* CORREÇÃO: .nav__links no CSS mas .nav__list no HTML — agora unificado em .nav__list */
+
 .nav__list {
   display: flex;
   flex-direction: column; /* Em mobile os links ficam em coluna */
   gap: 24px;
 }
 
-/* Em desktop os links ficam em linha */
+
 @media (min-width: 992px) {
   .nav__list {
     flex-direction: row;
@@ -337,9 +337,9 @@ h6, .h6 { font-size: 1.2rem; }
    ============================================= */
 
 .nav__link {
-  color: #b3b3b3;
+  color: #c0b9c2;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .nav__link:hover,
@@ -352,7 +352,7 @@ h6, .h6 { font-size: 1.2rem; }
    MAIN CONTENT
    ============================================= */
 
-/* CORREÇÃO: margin-top igual à altura do header para compensar o sticky */
+
 #mainContent {
   margin-top: var(--header-height);
 }
@@ -369,7 +369,7 @@ h6, .h6 { font-size: 1.2rem; }
  
 /* Secção que contém toda a galeria */
 #sectionGaleria {
-  padding: 60px 0 80px;
+  padding: 80px 40px 80px;
 }
  
 /* Título da secção */
@@ -377,27 +377,24 @@ h6, .h6 { font-size: 1.2rem; }
   font-size: 2rem;
   font-weight: 700;
   color: var(--secondary-color);
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
  
 /* ---- Grelha ---- */
-/* Mobile: 1 coluna
-   Tablet (600px+): 2 colunas
-   Desktop (992px+): 3 colunas */
- 
+
 .galeria__grid {
   display: grid;
-  grid-template-columns: 1fr;           /* Mobile: coluna única */
-  gap: 40px 24px;                        /* Espaço vertical maior que horizontal */
+  grid-template-columns: 1fr;           /* Min-Formato-Mobile: 1 coluna */
+  gap: 60px 20px;                        /* Espaço vertical e Horizontal aplicado aos outros Formatoss*/
 }
  
-@media (min-width: 600px) {
+@media (min-width: 600px) { /*Min-Formato Tablet*/
   .galeria__grid {
     grid-template-columns: repeat(2, 1fr); /* Tablet: 2 colunas */
   }
 }
  
-@media (min-width: 992px) {
+@media (min-width: 992px) { /*Min-Formato Desktop*/
   .galeria__grid {
     grid-template-columns: repeat(3, 1fr); /* Desktop: 3 colunas */
   }
@@ -417,13 +414,12 @@ h6, .h6 { font-size: 1.2rem; }
   cursor: pointer;
 }
  
-/* ---- Contentor da imagem ---- */
-/* overflow: hidden garante que o zoom da imagem não ultrapasse os limites */
+
 .galeria__img-container {
   width: 100%;
   aspect-ratio: 1 / 1;        /* Quadrado perfeito em qualquer tamanho */
   overflow: hidden;
-  background-color: var(--black-color-light); /* Placeholder enquanto a imagem carrega */
+  background-color: var(--black-color-light); /
 }
  
 /* ---- Imagem ---- */
@@ -433,11 +429,11 @@ h6, .h6 { font-size: 1.2rem; }
   object-fit: cover;           /* Preenche o quadrado sem distorcer */
   display: block;
  
-  /* Animação de hover: zoom suave só na imagem */
+  /* Animação de hover na imagem com opacidade*/
   transition: transform 0.4s ease, opacity 0.4s ease;
 }
  
-/* Hover: zoom ligeiro + ligeiro escurecimento — simples e discreto */
+
 .galeria__img-link:hover .galeria__img {
   transform: scale(1.05);
   opacity: 0.85;
@@ -464,7 +460,7 @@ h6, .h6 { font-size: 1.2rem; }
   font-size: 0.875rem;
   font-weight: 400;
   color: var(--secondary-color);
-  opacity: 0.65;               /* Mais subtil que o nome */
+  opacity: 0.65;               
   margin: 0;
 }
 
@@ -476,4 +472,5 @@ h6, .h6 { font-size: 1.2rem; }
 #mainFooter {
   padding: 20px;
   text-align: center;
+  color: var(--secondary-color);
 }
