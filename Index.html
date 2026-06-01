@@ -3,98 +3,234 @@
 <html lang="pt-PT">
    
     <head>
-        <title>BeatHub</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
+        <meta charset="UTF-8"> <!-- Define a codificação para caracteres (acentuação correta) -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BeatHub</title>
 
         <meta name="author" content="Rodrigo Miranda"/>
-        <meta name="description" content="Main-Page" />
+        <meta name="description" content="Portfólio" />
         <meta name="keywords" content="ESAD.CR, Licenciatura de Mulimédia, Projecto Final" />
 
-        <!--Ir ao google buscar Fonte: -->
+        <!-- Ico é chamado da pasta "Imagens" e tem a função de mostrar o logo na barra do navegador -->
+        <link rel="icon" type="image/x-icon" href="Imagens/favicon-32x32.ico">
+
+        <!-- Google Fonts: Outfit -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
         
-        
+        <!-- RemixIcons: biblioteca de ícones usada para o burger menu -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.9.1/fonts/remixicon.min.css">
-        
+
+        <!-- Ficheiros CSS -->
         <link rel="stylesheet" href="CSS/reset.css">
         <link rel="stylesheet" href="CSS/style.css">
-
-          <link rel="icon" type="image/x-icon" href="Imagens/favicon.ico">
-        
-        </head>
+    </head>
 
 
     <body>
-         
+
+        <!------------------------ Header/Navbar--------------->
         
         <header id="topHeader">
-             <nav id="mainMenu">
-                <div class="navAction">
-                    <div class="headerLogo">
-                        <a href="index.html" class="logo">
-                            <img src="Imagens/favicon.ico" alt="Logo"> <!--svg logo-->
-                        </a>
-                     </div>
+            <nav id="mainMenu" class="pageWidth">
 
-                     <div class="nav__toggle" id="nav-toggle">
-                        <i class="ri-menu-line nav__burger"></i>
-                        <i class="ri-close-line nav__close"></i>
+                <div class="navAction">
+
+                    <!------------ Logo ---------------------->
+
+                    <div id="headerLogo">
+                        <a href="index.html" title="BeatHub" rel="noopener noreferrer">
+                            <img src="Imagens/logo-white.svg" alt="BeatHub">
+                        </a>
                     </div>
 
-
-
-
-
-
+                   
+                    <!--vai buscar informação ao js para saber se o burguer está aberto/fechado-->
+                    <div class="nav__toggle" id="nav-toggle"> 
+                        <!-- Ícone burguer quando menu está fechado-->
+                        <i class="ri-menu-fill nav__burger"></i>
+                        <!-- Ícone burguer fechar quando menu está aberto -->
+                        <i class="ri-close-large-line nav__close"></i>
+                    </div>
                 </div>
-                        
+
+                <!------------- Menu de navegação --------------->
+               
                 <div class="nav__menu" id="navMenu">
-                    
-                    
-                    <!-- 5 BOTÕES DE NAVEGAÇÃO -->
                     <ul class="nav__list">
-                        <li><a class="nav__link" href="sobre.html">Sobre</a></li>
-                        <li><a class="nav__link" href="artistas.html">Artistas</a></li>
-                        <li><a class="nav__link" href="login.html">Login</a></li>
-                        <li><a class="nav__link" href="registro.html">Registro</a></li>
-                        <li><a class="nav__link" href="contacto.html" class="btn-cta">Contacto</a></li>
+                        <li>
+                            <a class="nav__link active" href="index.html" title="Página principal" rel="noopener noreferrer">Home</a>
+                        </li>
+                        <li>
+                            <a class="nav__link" href="sobre.html" title="Sobre" rel="noopener noreferrer">Sobre</a>
+                        </li>
+                        <li>
+                            <a class="nav__link" href="artistas.html" title="Artistas" rel="noopener noreferrer">Artistas</a>
+                        </li>
+                        <li>
+                            <a class="nav__link" href="processing.html" title="Processing" rel="noopener noreferrer">Processing</a>
+                        </li>
+                        <li>
+                            <a class="nav__link" href="contacto.html" title="Contactos" rel="noopener noreferrer">Contactos</a>
+                        </li>
                     </ul>
                 </div>
-
             </nav>
-
         </header>
-
-        <section id="sobre">Sobre</section>
-        <section id="artistas">Artistas</section>
-        <section id="contacto">Contacto</section>
-
-
-
-        <h3>Header Area </h3>
-           
-
-            
-
         
 
-        
 
-        
-       
-        <footer>
+        <!-----------------------CONTEÚDO PRINCIPAL -------------------->
+        <main id="mainContent">  <!-- 1 maain por pagina-->
+
+           <section aria-label="Galeria de artistas" id="sectionGaleria">
+                <div class="galeria__wrapper pageWidth"> <!--Perguntar como diminuir sem ser pela %-->
+ 
+                    <!-- Título da secção -->
+                    <h2 class="galeria__titulo">Galeria</h2>
+ 
+                    <!-- Grelha da galeria -->
+                    <div class="galeria__grid">
+ 
+                        <!-- Cartão 1 -->
+                        <article class="galeria__card">
+                            <!-- A tag <a> envolve APENAS a imagem — clicar no texto não redireciona -->
+                            <a href="artistas.html" class="galeria__img-link" title="Ver página do artista" rel="noopener noreferrer">
+                                <div class="galeria__img-container">
+                                    <img src="Imagens/Estrutura.JPG" alt="Artista 1" class="galeria__img">
+                                </div>
+                            </a>
+                            <div class="galeria__info">
+                                <p class="galeria__nome">Nome Artista</p>
+                                <p class="galeria__ano">2024</p>
+                            </div>
+                        </article>
+ 
+                        <!-- Cartão 2 -->
+                        <article class="galeria__card">
+                            <a href="artistas.html" class="galeria__img-link" title="Ver página do artista" rel="noopener noreferrer">
+                                <div class="galeria__img-container">
+                                    <img src="Imagens/artista-2.jpg" alt="Artista 2" class="galeria__img">
+                                </div>
+                            </a>
+                            <div class="galeria__info">
+                                <p class="galeria__nome">Nome Artista</p>
+                                <p class="galeria__ano">2024</p>
+                            </div>
+                        </article>
+ 
+                        <!-- Cartão 3 -->
+                        <article class="galeria__card">
+                            <a href="artistas.html" class="galeria__img-link" title="Ver página do artista" rel="noopener noreferrer">
+                                <div class="galeria__img-container">
+                                    <img src="Imagens/artista-3.jpg" alt="Artista 3" class="galeria__img">
+                                </div>
+                            </a>
+                            <div class="galeria__info">
+                                <p class="galeria__nome">Nome Artista</p>
+                                <p class="galeria__ano">2024</p>
+                            </div>
+                        </article>
+ 
+                        <!-- Cartão 4 -->
+                        <article class="galeria__card">
+                            <a href="artistas.html" class="galeria__img-link" title="Ver página do artista" rel="noopener noreferrer">
+                                <div class="galeria__img-container">
+                                    <img src="Imagens/artista-4.jpg" alt="Artista 4" class="galeria__img">
+                                </div>
+                            </a>
+                            <div class="galeria__info">
+                                <p class="galeria__nome">Nome Artista</p>
+                                <p class="galeria__ano">2024</p>
+                            </div>
+                        </article>
+ 
+                        <!-- Cartão 5 -->
+                        <article class="galeria__card">
+                            <a href="artistas.html" class="galeria__img-link" title="Ver página do artista" rel="noopener noreferrer">
+                                <div class="galeria__img-container">
+                                    <img src="Imagens/artista-5.jpg" alt="Artista 5" class="galeria__img">
+                                </div>
+                            </a>
+                            <div class="galeria__info">
+                                <p class="galeria__nome">Nome Artista</p>
+                                <p class="galeria__ano">2024</p>
+                            </div>
+                        </article>
+ 
+                        <!-- Cartão 6 -->
+                        <article class="galeria__card">
+                            <a href="artistas.html" class="galeria__img-link" title="Ver página do artista" rel="noopener noreferrer">
+                                <div class="galeria__img-container">
+                                    <img src="Imagens/artista-6.jpg" alt="Artista 6" class="galeria__img">
+                                </div>
+                            </a>
+                            <div class="galeria__info">
+                                <p class="galeria__nome">Nome Artista</p>
+                                <p class="galeria__ano">2024</p>
+                            </div>
+                        </article>
+ 
+                        <!-- Cartão 7 -->
+                        <article class="galeria__card">
+                            <a href="artistas.html" class="galeria__img-link" title="Ver página do artista" rel="noopener noreferrer">
+                                <div class="galeria__img-container">
+                                    <img src="Imagens/artista-7.jpg" alt="Artista 7" class="galeria__img">
+                                </div>
+                            </a>
+                            <div class="galeria__info">
+                                <p class="galeria__nome">Nome Artista</p>
+                                <p class="galeria__ano">2024</p>
+                            </div>
+                        </article>
+ 
+                        <!-- Cartão 8 -->
+                        <article class="galeria__card">
+                            <a href="artistas.html" class="galeria__img-link" title="Ver página do artista" rel="noopener noreferrer">
+                                <div class="galeria__img-container">
+                                    <img src="Imagens/artista-8.jpg" alt="Artista 8" class="galeria__img">
+                                </div>
+                            </a>
+                            <div class="galeria__info">
+                                <p class="galeria__nome">Nome Artista</p>
+                                <p class="galeria__ano">2024</p>
+                            </div>
+                        </article>
+ 
+                        <!-- Cartão 9 -->
+                        <article class="galeria__card">
+                            <a href="artistas.html" class="galeria__img-link" title="Ver página do artista" rel="noopener noreferrer">
+                                <div class="galeria__img-container">
+                                    <img src="Imagens/artista-9.jpg" alt="Artista 9" class="galeria__img">
+                                </div>
+                            </a>
+                            <div class="galeria__info">
+                                <p class="galeria__nome">Nome Artista</p>
+                                <p class="galeria__ano">2024</p>
+                            </div>
+                        </article>
+                        </div>
+                    <!-- fim .galeria__grid -->
+ 
+                </div>
+            </section>
+
+        </main>
+        <!-- ========== FIM CONTEÚDO PRINCIPAL ========== -->
+
+
+        <!-- ========== FOOTER ========== -->
+        <footer id="mainFooter">
             <p>2026</p>
         </footer>
+        <!-- ========== FIM FOOTER ========== -->
 
-            <!-- Os ficheiro de script ficam no final da página -->
 
-        <!--<script src="JS/Script.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.6/processing.min.js" integrity="sha512-lbO95HE52QWwrDVEaDJmW9Xr8UIfMpRFT3akB8ett7lGfWsrGKz07L6wfwnF3KJ3T4a8cZupAKoI9Q2jH+0QIA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="processing/Script.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+        <!-- Scripts no final do body para não bloquear o carregamento da página -->
+        <!-- CORREÇÃO: Script descomentado e a apontar para o ficheiro correto -->
+        <script src="JS/Script.js"></script>
 
     </body>
 

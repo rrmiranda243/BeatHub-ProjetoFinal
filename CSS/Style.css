@@ -1,23 +1,18 @@
 /*! NOTE: These are just recommended default global styles, edit as required */
 
-::selection { /* Optional */
-  /* It can be really hard to read highlighted text with a text-shadow, it should be removed when selected */
+::selection {
   text-shadow: none;
-  
-  /* NOTE: Using this means the color and background-color are set to transparent for selected text... */
-  /* So you can customise your styles below */
   color: #fff;
   background-color: #00f;
 }
 
 html {
-  /* Make base font-size 100% of browser font-size */
   font-size: 100%;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   html {
-    scroll-behavior: smooth; /* Smoothly animate to different sections within a page, only if the user doesn't mind animations */
+    scroll-behavior: smooth;
   }
 }
 
@@ -25,60 +20,44 @@ html {
 *::before,
 *::after,
 html {
-  /* Declare your box-sizing here
-  /* https://css-tricks.com/box-sizing */
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  /* outras opções - content-box */
 }
 
 body {
-  /* Declare your default font stack here */
-  font-family: "Font Stack", sans-serif, serif, monospace, cursive, fantasy;
-  /* outras opções - serif, monospace, cursive, fantasy */
-
-  /* Better text rendering - font-smoothing has not been officially declared, but can still be useful */
+  font-family: "Outfit", sans-serif;
   text-rendering: geometricPrecision;
-  /* outras opções -optimizeLegibility | optimizeSpeed */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 img {
-  /* For responsive images that adjust & adapt */
   height: auto;
   max-width: 100%;
-  
-  /* This isn't needed, but as a user, I get frustrated when I highlight text and the image gets highlighted too */
   user-select: none;
 }
 
 button {
-  color: inherit; /* By default, buttons don't inherit the font colour, this is a useful default to override */
+  color: inherit;
 }
 
 a, button {
-  touch-action: manipulation; /* Element doesn't want double-tap on mobile to zoom */
+  touch-action: manipulation;
 }
 
 svg {
-  /* Make the SVGs fit the parent container by default */
   height: 100%;
   width: 100%;
-  
-  /* Optional - make the SVG's fill be the same as the inherited color */
   fill: currentColor;
-  
-  /* Prevent the SVG from altering cursor interaction */
   pointer-events: none;
 }
 
 iframe, video {
-  /* Make iframes & videos fit the parent container by default */
   height: 100%;
-  width: 100%
+  width: 100%;
 }
+
 
 /**************************************************
 ***************************************************
@@ -86,36 +65,39 @@ iframe, video {
 ***************************************************
 ***************************************************/
 
-/***************** VARIABLES CSS ******************/
+
+/* =============================================
+   VARIÁVEIS CSS
+   ============================================= */
 :root {
-  --header-height: 3.5rem;
-  /*========== Colors ==========*/
-  /*Color mode HSL(hue, saturation, lightness)*/
+  --header-height: 4rem;           /* Altura fixa do header */
+
+  /* Cores */
   --black-color: hsl(220, 24%, 12%);
   --black-color-light: hsl(220, 24%, 15%);
   --black-color-lighten: hsl(220, 20%, 18%);
   --white-color: #fff;
-  --body-color: hsla(90, 34%, 63%, .5);
+  --body-color: hsl(0, 0%, 9%);
   --primary-color: hsla(9, 73%, 50%, 1);
-  --secondary-color: hsla(203, 37%, 22%, 1);
-  /*========== Font and typography ==========*/
-  /*.5rem = 8px | 1rem = 16px ...*/
-  /*--body-font: "Montserrat", sans-serif;*/
-  /*--normal-font-size: .938rem;*/
+  --secondary-color: rgb(255, 255, 255);
 
-  /*========== Font weight ==========*/
+  /* Pesos tipográficos */
   --font-regular: 400;
   --font-semi-bold: 600;
   --font-bold: 800;
 
-  /*========== z index ==========*/
+  /* Z-index — o menu (200) tem de ser maior que o header (100) */
   --z-tooltip: 10;
-  --z-fixed: 100;
+  --z-fixed: 10;      /* Header */
+  --z-nav: 200;        /* Menu burger aberto — fica por cima de tudo */
 }
 
-/*****************  Estilos Base ******************/
 
-body{
+/* =============================================
+   ESTILOS BASE
+   ============================================= */
+
+body {
   font-size: 16px;
   font-family: "Outfit", sans-serif;
   background-color: var(--body-color);
@@ -139,6 +121,8 @@ strong {
 
 ul {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 a {
@@ -146,46 +130,22 @@ a {
   color: var(--secondary-color);
 }
 
-a:hover, a:active, a.active {
-  color: var(--primary-color);  
+a:hover,
+a:active,
+a.active {
+  color: var(--primary-color);
 }
-/**** espaçar elementos ****/
-.space-S{
-  height: 30px;
-}
-.space-M{
-  height: 60px;
-}
-.space-L{
-  height: 90px;
-}
-.space-XL{
-  height: 120px;
-}
-/************************************
-******** largura dos elemento *******
-******** que compoem o body *********
-*************************************/
-/* utilizando tags */
-/*
-body header, body main, body footer {
- width: 100%;
- max-width: 1680px;
- margin: 0 auto;
- padding: 0 16px;
-}
-*/
-/* utilizando id */
-/*
-#topHeader, #mainContent, #mainFooter {
-  width: 100%;
-  max-width: 1680px;
-  margin: 0 auto;
-  padding: 0 16px;
-}
-*/
-/* utilizando classes */
 
+/* Espaçadores utilitários */
+.space-S  { height: 30px; }
+.space-M  { height: 60px; }
+.space-L  { height: 90px; }
+.space-XL { height: 120px; }
+
+
+/* =============================================
+   LARGURA DE PÁGINA (contentor centrado)
+   ============================================= */
 .pageWidth {
   width: 100%;
   max-width: 1680px;
@@ -193,165 +153,325 @@ body header, body main, body footer {
   padding: 0 16px;
 }
 
-/*********************************************
-**** Definição da tipografia para mobile *****
-*********************************************/
 
-h1, .h1{
-  font-size: 2.986rem;
-  font-weight: 700;
-  letter-spacing: 0.22rem;
-  line-height: 1.5;
-}
+/* =============================================
+   TIPOGRAFIA — MOBILE FIRST
+   ============================================= */
 
-h2, .h2{
-  font-size: 2.488rem;
-  font-weight: 700;
-  line-height: 1.15;
-}
+h1, .h1 { font-size: 2.986rem; font-weight: 700; letter-spacing: 0.22rem; line-height: 1.5; }
+h2, .h2 { font-size: 2.488rem; font-weight: 700; line-height: 1.15; }
+h3, .h3 { font-size: 2.074rem; font-weight: 500; line-height: 1; }
+h4, .h4 { font-size: 1.728rem; }
+h5, .h5 { font-size: 1.44rem; }
+h6, .h6 { font-size: 1.2rem; }
 
-h3, .h3{
-  font-size: 2.074rem;
-  font-weight: 500;
-  line-height: 1;
-}
-
-h4, .h4{
-  font-size: 1.728rem;
-}
-
-h5, .h5{
-  font-size: 1.44rem;
-}
-
-h6, .h6{
-  font-size: 1.2rem;
-}
-/*********************************************
-**** Definição da tipografia para desktop *****
-*********************************************/
+/* Tipografia Desktop */
 @media (min-width: 992px) {
-  h1, .h1{
-    font-size: 7.993rem;
-  }
-
-  h2, .h2{
-    font-size: 5.653rem;
-  }
-
-  h3, .h3{
-    font-size: 3.998rem;
-  }
-
-  h4, .h4{
-    font-size: 2.2827rem;
-  }
-
-  h5, .h5{
-    font-size: 1.9999rem;
-  }
-
-  h6, .h6{
-    font-size: 1.414rem;
-  }
+  h1, .h1 { font-size: 7.993rem; }
+  h2, .h2 { font-size: 2.28rem/* 5.653rem */; }
+  h3, .h3 { font-size: 3.998rem; }
+  h4, .h4 { font-size: 2.2827rem; }
+  h5, .h5 { font-size: 1.9999rem; }
+  h6, .h6 { font-size: 1.414rem; }
 }
 
-/****************************************
-********** menu de navegação ************
-****************************************/
 
-/*=============== HEADER ===============*/
-header {
-    background-color: #1e1e1e;         /* Fundo ligeiramente mais claro que o body para dar contraste */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Sombra suave abaixo da navbar */
-    position: sticky;                  /* Faz com que a barra fique fixa no topo ao fazer scroll */
-    top: 0;
-    z-index: 1000;                     /* Garante que a navbar fica sempre por cima do conteúdo */
+/* =============================================
+   HEADER
+   ============================================= */
+
+/* O header ocupa sempre 100% da largura */
+/* CORREÇÃO: pageWidth foi retirado do header e colocado no <nav> por dentro */
+#topHeader {
+  background-color: #6200a2;
+  box-shadow: 0 2px 10px rgba(155, 0, 244, 0.5);
+  position: sticky;    /* Fica fixo no topo ao fazer scroll */
+  top: 0;
+  z-index: var(--z-fixed);
+  width: 100%;
 }
+
+
+/* =============================================
+   NAVBAR — estrutura principal
+   ============================================= */
 
 #mainMenu {
-    display: flex;                     /* Ativa o modo Flexbox para alinhar os elementos */
-    justify-content: space-between;    /* Empurra o Logo para a esquerda e os Links para a direita */
-    align-items: center;               /* Alinha verticalmente o logo e os links ao centro */
-    padding: 15px 40px;                /* Espaçamento interno: 15px cima/baixo, 40px lados */
-    max-width: 100%;                 /* Limita a largura máxima da barra em ecrãs grandes */
-    margin: 0 auto;                    /* Centra a navbar inteira no ecrã */
-}
-
-/* Estilo do Logótipo */
-.logo .logo-icon img {
-    height: 40px;                      /* Define uma altura fixa para o teu favicon/logo */
-    width: auto;                       /* Mantém a proporção da imagem */
-    display: block;
-    transition: transform 0.3s ease;   /* Animação suave para o efeito de passar o rato */
-}
-
-.logo .logo-icon img:hover {
-    transform: scale(1.05);            /* Aumenta ligeiramente o logo ao passar o rato */
-}
-
-/* Links de Navegação (Lista <ul>) */
-.nav__links {
-    display: flex;                     /* Coloca os itens da lista lado a lado */
-    list-style: none;                  /* Remove os pontos/bullets padrão da lista */
-    gap: 25px;                         /* Cria um espaço de 25px entre cada link */
-    margin: 0;
-    padding: 0;
-    align-items: center;               /* Garante alinhamento vertical perfeito */
-}
-
-/* Estilo individual de cada Link (<a>) */
-.nav__links a {
-    color: #b3b3b3;                    /* Cor de texto cinza claro para os links normais */
-    text-decoration: none;             /* Remove o sublinhado padrão dos links */
-    font-size: 16px;
-    font-weight: 500;
-    transition: color 0.3s ease;       /* Transição suave ao mudar de cor */
-}
-
-/* Efeito ao passar o rato (Hover) nos links normais */
-.nav__links a:hover {
-    color: #ffffff;                    /* O link fica totalmente branco */
-}
-
-/* ==========================================================================
-   BOTÃO DE DESTAQUE (Contacto - Botão CTA)
-   ========================================================================== */
-.nav-links .btn-cta {
-    background-color: #ff0055;         /* Cor vibrante para chamar a atenção (ex: rosa/vermelho) */
-    color: #ffffff !important;         /* Força o texto a ser sempre branco */
-    padding: 8px 18px;                 /* Espaçamento interno para parecer um botão */
-    border-radius: 20px;               /* Arredonda os cantos do botão */
-    font-weight: 600;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-/* Efeito ao passar o rato no botão de contacto */
-.nav-links .btn-cta:hover {
-    background-color: #e0004c;         /* Escurece ligeiramente a cor do botão */
-    transform: translateY(-1px);       /* Sobe o botão ligeiramente (efeito 3D) */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* logo à esquerda, menu à direita */
+  height: var(--header-height);
 }
 
 
+/* =============================================
+   NAVACTION — agrupa logo + botão burger
+   ============================================= */
 
-
-/****************************************
-************* mainContent ***************
-****************************************/
-
-#mainContent {
-  margin-top:var(--header-height)!important;
+/* CORREÇÃO: .navAction foi adicionado ao CSS (existia no HTML mas não tinha estilo) */
+.navAction {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%; /* Em mobile ocupa toda a largura */
 }
 
-@media screen and (min-width: 992px) {
-  #mainContent {
-    margin-top:calc(var(--header-height)+2rem)
+/* Em desktop o navAction não precisa de ocupar toda a largura */
+@media (min-width: 992px) {
+  .navAction {
+    width: auto;
   }
 }
 
-/****************************************
-************* mainFooter ***************
-****************************************/
+
+/* =============================================
+   LOGO
+   ============================================= */
+
+/* CORREÇÃO: era .logo .logo-icon img — agora alinhado com o HTML: #headerLogo a img */
+#headerLogo a img {
+  height: 40px;
+  width: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+#headerLogo a img:hover {
+  transform: scale(1.15);
+}
+
+
+
+/* =============================================
+   BOTÃO BURGER (toggle) — só visível em mobile
+   ============================================= */
+
+.nav__toggle {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1.4rem;
+  color: var(--white-color);
+  padding: 4px;
+}
+
+/* Por defeito, o ícone de fechar está escondido */
+.nav__close {
+  display: none;
+}
+
+/* Quando o JS adiciona .show-icon */
+.nav__toggle.show-icon .nav__burger {
+  display: none;
+}
+
+.nav__toggle.show-icon .nav__close {
+  display: block;
+}
+
+/* Em desktop o botão burger desaparece */
+@media (min-width: 992px) {
+  .nav__toggle {
+    display: none;
+  }
+}
+
+
+/* =============================================
+   NAV MENU — lista de links
+   ============================================= */
+
+/* Mobile e Tablet */
+.nav__menu {
+  display: none;
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  width: 100%;
+  background-color: #6200a2;
+  padding: 24px 16px 40px;
+  z-index: 200;
+}
+
+/* Quando o JS adiciona .show-menu */
+.nav__menu.show-menu {
+  display: block;
+}
+
+/* Desktop */
+@media (min-width: 992px) {
+  .nav__menu {
+    display: block;
+    position: static;
+    width: auto;
+    padding: 0;
+    background-color: transparent;
+  }
+
+}
+
+
+/* =============================================
+   NAV LIST — os itens de menu
+   ============================================= */
+
+/* CORREÇÃO: .nav__links no CSS mas .nav__list no HTML — agora unificado em .nav__list */
+.nav__list {
+  display: flex;
+  flex-direction: column; /* Em mobile os links ficam em coluna */
+  gap: 24px;
+}
+
+/* Em desktop os links ficam em linha */
+@media (min-width: 992px) {
+  .nav__list {
+    flex-direction: row;
+    align-items: center;
+    gap: 25px;
+  }
+}
+
+
+/* =============================================
+   NAV LINKS — estilo individual de cada link
+   ============================================= */
+
+.nav__link {
+  color: #b3b3b3;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.nav__link:hover,
+.nav__link.active {
+  color: var(--white-color);
+}
+
+
+/* =============================================
+   MAIN CONTENT
+   ============================================= */
+
+/* CORREÇÃO: margin-top igual à altura do header para compensar o sticky */
+#mainContent {
+  margin-top: var(--header-height);
+}
+
+@media (min-width: 992px) {
+  #mainContent {
+    margin-top: calc(var(--header-height) + 2rem);
+  }
+}
+
+/* =============================================
+   GALERIA DE ARTISTAS
+   ============================================= */
+ 
+/* Secção que contém toda a galeria */
+#sectionGaleria {
+  padding: 60px 0 80px;
+}
+ 
+/* Título da secção */
+.galeria__titulo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--secondary-color);
+  margin-bottom: 40px;
+}
+ 
+/* ---- Grelha ---- */
+/* Mobile: 1 coluna
+   Tablet (600px+): 2 colunas
+   Desktop (992px+): 3 colunas */
+ 
+.galeria__grid {
+  display: grid;
+  grid-template-columns: 1fr;           /* Mobile: coluna única */
+  gap: 40px 24px;                        /* Espaço vertical maior que horizontal */
+}
+ 
+@media (min-width: 600px) {
+  .galeria__grid {
+    grid-template-columns: repeat(2, 1fr); /* Tablet: 2 colunas */
+  }
+}
+ 
+@media (min-width: 992px) {
+  .galeria__grid {
+    grid-template-columns: repeat(3, 1fr); /* Desktop: 3 colunas */
+  }
+}
+ 
+/* ---- Cartão individual ---- */
+.galeria__card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+ 
+/* ---- Link que envolve a imagem ---- */
+/* O cursor de pointer indica que é clicável, sem precisar de texto */
+.galeria__img-link {
+  display: block;
+  cursor: pointer;
+}
+ 
+/* ---- Contentor da imagem ---- */
+/* overflow: hidden garante que o zoom da imagem não ultrapasse os limites */
+.galeria__img-container {
+  width: 100%;
+  aspect-ratio: 1 / 1;        /* Quadrado perfeito em qualquer tamanho */
+  overflow: hidden;
+  background-color: var(--black-color-light); /* Placeholder enquanto a imagem carrega */
+}
+ 
+/* ---- Imagem ---- */
+.galeria__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;           /* Preenche o quadrado sem distorcer */
+  display: block;
+ 
+  /* Animação de hover: zoom suave só na imagem */
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+ 
+/* Hover: zoom ligeiro + ligeiro escurecimento — simples e discreto */
+.galeria__img-link:hover .galeria__img {
+  transform: scale(1.05);
+  opacity: 0.85;
+}
+ 
+/* ---- Texto abaixo da imagem ---- */
+.galeria__info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+ 
+/* Nome do artista */
+.galeria__nome {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--secondary-color);
+  margin: 0;
+  line-height: 1.3;
+}
+ 
+/* Ano */
+.galeria__ano {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--secondary-color);
+  opacity: 0.65;               /* Mais subtil que o nome */
+  margin: 0;
+}
+
+
+/* =============================================
+   FOOTER
+   ============================================= */
 
 #mainFooter {
   padding: 20px;
