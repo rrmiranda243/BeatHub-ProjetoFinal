@@ -26,6 +26,9 @@
         <!-- Ficheiros CSS -->
         <link rel="stylesheet" href="CSS/reset.css">
         <link rel="stylesheet" href="CSS/style.css">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.css">
+
     </head>
 
 
@@ -84,6 +87,29 @@
 
         <!-----------------------CONTEÚDO PRINCIPAL -------------------->
         <main id="mainContent">  <!-- 1 maain por pagina-->
+                <!-- Slider main container -->
+            <div class="swiper mySwiper">
+                    <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                            <!-- Slides -->
+                    <div class="swiper-slide"><img src="Imagens/Paisagem2.jpg" alt="Artista 1" class="galeria__img"></div>
+                    <div class="swiper-slide">Slide 2</div>
+                    <div class="swiper-slide">Slide 3</div>
+            
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+
+            
+
+                    
+
+                
 
            <section aria-label="Galeria de artistas" id="sectionGaleria">
                 <div class="galeria__wrapper pageWidth"> 
@@ -238,8 +264,8 @@
                 
         </footer>
         <!---------------FIM FOOTER------------>
-
-
+<script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
         <!-- ========== Link js ========== -->
         <script src="JS/Script.js"></script>
 
