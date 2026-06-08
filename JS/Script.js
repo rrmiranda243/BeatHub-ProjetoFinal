@@ -22,3 +22,17 @@ var swiper = new Swiper(".mySwiper", {
         el: ".swiper-pagination",
       },
 });
+
+const track = document.querySelector('.banner-artistas__track');
+let pos = 0;
+const speed = 1;
+
+function animate() {
+  pos -= speed;
+  const half = track.scrollWidth / 2;
+  if (pos <= -half) pos = 0;
+  track.style.transform = `translateX(${pos}px)`;
+  requestAnimationFrame(animate);
+}
+
+animate();
