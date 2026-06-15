@@ -393,7 +393,7 @@ h6, .h6 { font-size: 1.2rem; }
     .swiper-slide {
       text-align: center;
       font-size: 18px;
-      background: #444;
+      background: #c1c0c0;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -581,7 +581,7 @@ h6, .h6 { font-size: 1.2rem; }
 
 .galeria__album {
     margin: 0;
-    color: #bababa;
+    color: #b3b3b3;
 }
 /* FIM---Galeria Video */
 
