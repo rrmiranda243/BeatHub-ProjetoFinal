@@ -517,7 +517,7 @@ h6, .h6 { font-size: 1.2rem; }
    ============================================= */
 
 #sectionVideos {
-  padding: 0px 60px 40px;
+  padding: 0px 60px 40px; 
 }
 
 .galeriaVideos__wrapper {
@@ -591,6 +591,7 @@ h6, .h6 { font-size: 1.2rem; }
    ============================================= */
 
 .banner-artistas {
+  
   padding-left: 60px;
   padding-right: 60px;
   overflow: hidden;
@@ -894,6 +895,7 @@ h6, .h6 { font-size: 1.2rem; }
     padding-top: 60px;
     padding-right: 60px;
     padding-left: 60px;
+    
 }
 
 .projetos__wrapper {
@@ -903,9 +905,9 @@ h6, .h6 { font-size: 1.2rem; }
 }
 
 .projetos__titulo {
-    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    font-size: 2.5rem;
     text-align: center;
-    margin-bottom: 1rem;
+    margin-top: 16px;
     color: var(--secondary-color);
 }
 
@@ -913,6 +915,7 @@ h6, .h6 { font-size: 1.2rem; }
     display: grid;
     grid-template-columns: 1fr;
     gap: 16px;
+
 }
 
 @media (min-width: 600px) {
