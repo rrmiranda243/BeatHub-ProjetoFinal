@@ -94,7 +94,7 @@ iframe, video {
 
 
 /* =============================================
-   ESTILOS BASE
+                  ESTILOS BASE
    ============================================= */
 
 body {
@@ -144,7 +144,7 @@ a.active {
 
 
 /* =============================================
-   LARGURA DE PÁGINA (contentor centrado)
+      LARGURA DE PÁGINA (contentor centrado)
    ============================================= */
 .pageWidth {
   width: 100%;
@@ -155,7 +155,7 @@ a.active {
 
 
 /* =============================================
-   TIPOGRAFIA — MOBILE FIRST
+          TIPOGRAFIA — MOBILE FIRST
    ============================================= */
 
 h1, .h1 { font-size: 2.986rem; font-weight: 700; letter-spacing: 0.22rem; line-height: 1.5; }
@@ -165,7 +165,9 @@ h4, .h4 { font-size: 1.728rem; }
 h5, .h5 { font-size: 1.44rem; }
 h6, .h6 { font-size: 1.2rem; }
 
-/* Tipografia Desktop */
+/* =============================================
+              TIPOGRAFIA DESKTOP
+   ============================================= */
 @media (min-width: 992px) {
   h1, .h1 { font-size: 7.993rem; }
   h2, .h2 { font-size: 2.28rem/* 5.653rem */; }
@@ -177,7 +179,7 @@ h6, .h6 { font-size: 1.2rem; }
 
 
 /* =============================================
-   HEADER
+                      HEADER
    ============================================= */
 
 /* O header ocupa sempre 100% da largura */
@@ -193,7 +195,7 @@ h6, .h6 { font-size: 1.2rem; }
 
 
 /* =============================================
-   NAVBAR — estrutura principal
+            NAVBAR — estrutura principal
    ============================================= */
 
 #mainMenu {
@@ -206,7 +208,7 @@ h6, .h6 { font-size: 1.2rem; }
 
 
 /* =============================================
-   NAVACTION — agrupa logo + botão burger
+      NAVACTION — agrupa logo + botão burger
    ============================================= */
 
 
@@ -225,7 +227,7 @@ h6, .h6 { font-size: 1.2rem; }
 }
 
 /* =============================================
-   Nome/Titulo Site
+                Nome/Titulo Site
    ============================================= */
 .site-title {
     display: flex;
@@ -238,7 +240,7 @@ h6, .h6 { font-size: 1.2rem; }
 
 
 /* =============================================
-   LOGO
+                      LOGO
    ============================================= */
 
 
@@ -292,7 +294,7 @@ h6, .h6 { font-size: 1.2rem; }
 
 
 /* =============================================
-   NAV MENU — lista de links
+          NAV MENU — lista de links
    ============================================= */
 
 /* Quando fica Mobile e Tablet é o Menu em baixo do Burguer*/
@@ -326,7 +328,7 @@ h6, .h6 { font-size: 1.2rem; }
 
 
 /* =============================================
-   NAV LIST — os itens de menu
+          NAV LIST — os itens de menu
    ============================================= */
 
 
@@ -363,12 +365,12 @@ h6, .h6 { font-size: 1.2rem; }
 
 
 /* =============================================
-   MAIN CONTENT
+                  MAIN CONTENT
    ============================================= */
 
 
 #mainContent {
-  margin-top: 0;   /*Mudar, quero meter mais pequeno o espaçamento*/
+  margin-top: 0;   /*margem da nav bar para outra secção abaixo*/
 }
 
 @media screen and (min-width: 992px) {
@@ -376,9 +378,6 @@ h6, .h6 { font-size: 1.2rem; }
     margin-top: 0;
   }
 }
-
-    
-
 
     .swiper {
      width: 100%;
@@ -408,12 +407,12 @@ h6, .h6 { font-size: 1.2rem; }
     }
 
 /* =============================================
-   GALERIA DE ARTISTAS
+              GALERIA DE ARTISTA
    ============================================= */
  
 /* Secção que contém toda a galeria */
 #sectionGaleria {
-  padding: 40px 60px 60px;
+  padding: 40px 60px 40px;
 }
  
 /* Título da secção */
@@ -422,7 +421,7 @@ h6, .h6 { font-size: 1.2rem; }
   font-size: 2rem;
   font-weight: 700;
   color: var(--secondary-color);
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
  
 /* ---- Grelha ---- */
@@ -509,7 +508,9 @@ h6, .h6 { font-size: 1.2rem; }
   margin: 0;
 }
 
-/* Galeria Video */
+/* =============================================
+                  GALERIA VIDEO
+   ============================================= */
 
 #sectionVideos {
   padding: 0px 40px 40px;
@@ -581,7 +582,9 @@ h6, .h6 { font-size: 1.2rem; }
 /* FIM---Galeria Video */
 
 
-
+/* =============================================
+        BANNER ROUPA / *antigo - artistas
+   ============================================= */
 
 .banner-artistas {
   padding: 2rem 0;
@@ -596,7 +599,7 @@ h6, .h6 { font-size: 1.2rem; }
 
 .banner-artistas__track {
   display: flex;
-  width: max-content;
+  width: max-content; /*efeito pingpong com 10s, loop*/
   animation: banner-pingpong 10s ease-in-out infinite;
 }
 
@@ -605,7 +608,7 @@ h6, .h6 { font-size: 1.2rem; }
     transform: translateX(20px);
   }
   50% {
-    transform: translateX(-200px); /* ajusta este valor à distância que queres */
+    transform: translateX(-200px); /* desde o ponto A AO B para a animação */
   }
 }
 
@@ -629,7 +632,8 @@ h6, .h6 { font-size: 1.2rem; }
   margin-top: 8px;
   color: #fff;
 }
- */
+ 
+
 /* =============================================
                      Contactos
    ============================================= */
@@ -655,8 +659,6 @@ h6, .h6 { font-size: 1.2rem; }
   margin-bottom: 20px;
 }
   
-
-
 /* imagem */
 .contactos__imagem {
   flex: 1;
@@ -782,7 +784,10 @@ h6, .h6 { font-size: 1.2rem; }
     }
 }
 
-/* ===== Trabalhos mais populares ===== */
+/* =============================================
+          TRABALHOS POPULARES ARTISTA
+   ============================================= */
+
 .trabalhos {
     padding: 3rem 0;
     color: var(--secondary-color);
@@ -852,7 +857,7 @@ h6, .h6 { font-size: 1.2rem; }
 
 
 /* =============================================
-                     Projetos
+                     PROJETOS
    ============================================= */
 
 .projetos {
@@ -920,11 +925,6 @@ h6, .h6 { font-size: 1.2rem; }
     font-weight: bold;
 }
 
-
-
-
-
-
 /* =============================================
                      FOOTER
    ============================================= */
@@ -984,6 +984,13 @@ h6, .h6 { font-size: 1.2rem; }
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 3rem 0;
+  padding: 3rem 0;  
 }
+
+
+
+
+/* =============================================
+                      FIM
+   ============================================= */
 

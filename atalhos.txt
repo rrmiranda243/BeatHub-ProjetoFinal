@@ -1,5 +1,0 @@
-Ficheiro de Atalhos do Visual Code
-
-Shift + Alt + A - Seleciona um bloco de texto e mete em comentário
-
-Ctrl + F - Pesquisa no ficheiro 

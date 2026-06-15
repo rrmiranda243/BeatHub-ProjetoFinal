@@ -1,0 +1,29 @@
+
+Ficheiro de Atalhos do Visual Code + Dicionario de significados de funções html + css + js + jv
+RM 3230357
+
+
+
+Atalhos:
+
+Shift + Alt + A - Seleciona um bloco de texto e mete em comentário
+
+Ctrl + F - Pesquisa no ficheiro 
+
+Funções:
+
+REM - É uma unidade de medida relativa ao tamanho de fonte do elemento <html> (o "root") 1 rem = 16px
+
+vw - significa "viewport width" — 1vw equivale a 1% da largura da janela do navegador. 
+
+flex-wrap: wrap - quando não há espaço suficiente, os itens "quebram" e passam para a linha seguinte — como texto que faz quebra de linha automática.
+
+clamp(x, y, z)  clamp(mínimo, preferido, máximo) define um valor responsivo com limites
+
+flex-direction: row é o valor padrão e coloca os itens em fila horizontal (da esquerda para a direita). A alternativa column colocaria em fila vertical.
+
+overflow: hidden   corta (esconde) tudo o que sair dos limites do elemento, sem mostrar barras de scroll. Muito usado para imagens dentro de containers
+
+
+
+
