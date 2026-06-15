@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html lang="pt-PT">
+   
+    <head>
+        
+        <meta charset="UTF-8"> <!-- Define a codificação para caracteres (acentuação correta) -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Resk12</title>
+
+        <meta name="author" content="Rodrigo Miranda"/>
+        <meta name="description" content="Portfólio" />
+        <meta name="keywords" content="ESAD.CR, Licenciatura de Mulimédia, Projecto Final" />
+
+        <!-- Ico é chamado da pasta "Imagens" e tem a função de mostrar o logo na barra do navegador -->
+        <link rel="icon" type="image/x-icon" href="Imagens/favicon-32x32.ico">
+
+        <!-- Google Fonts: Outfit -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+        
+        <!-- RemixIcons: biblioteca de ícones usada para o burger menu -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.9.1/fonts/remixicon.min.css">
+
+        <!-- Ficheiros CSS -->
+        <link rel="stylesheet" href="CSS/reset.css">
+        <link rel="stylesheet" href="CSS/style.css">
+    </head>
+
+
+    <body>
+
+        <!------------------------ Header/Navbar--------------->
+        
+        <header id="topHeader">
+            <nav id="mainMenu" class="pageWidth">
+
+                <div class="navAction">
+
+                    <!------------ Logo ---------------------->
+
+                    <div id="headerLogo">
+                        <a href="index.html" title="Resk12" rel="noopener noreferrer">
+                            <img src="Imagens/logo-white.svg" alt="Resk12">
+                            <span class="site-title">Resk12</span>
+                        </a>
+                    </div>
+
+                   
+                    <!--vai buscar informação ao js para saber se o burguer está aberto/fechado-->
+                    <div class="nav__toggle" id="nav-toggle"> 
+                        <!-- Ícone burguer quando menu está fechado-->
+                        <i class="ri-menu-fill nav__burger"></i>
+                        <!-- Ícone burguer fechar quando menu está aberto -->
+                        <i class="ri-close-large-line nav__close"></i>
+                    </div>
+                </div>
+
+                <!------------- Menu de navegação --------------->
+               
+                <div class="nav__menu" id="navMenu">
+                    <ul class="nav__list">
+                        <li>
+                            <a class="nav__link" href="index.html" title="Página principal" rel="noopener noreferrer">Home</a>
+                        </li>
+                        <li>
+                            <a class="nav__link" href="sobre.html" title="Sobre" rel="noopener noreferrer">Sobre</a>
+                        </li>
+                        <li>
+                            <a class="nav__link" href="projetos.html" title="projetos" rel="noopener noreferrer">Projetos</a>
+                        </li>
+                        <li>
+                            <a class="nav__link active" href="processing.html" title="Processing" rel="noopener noreferrer">Processing</a>
+                        </li>
+                        <li>
+                            <a class="nav__link" href="contacto.html" title="Contactos" rel="noopener noreferrer">Contactos</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <!-----------------------CONTEÚDO PRINCIPAL -------------------->
+        <main>
+                <section class="relogio" aria-label="Relógio digital">
+                    <div id="relogio-container"></div>
+                </section>
+        </main>
+
+           <!------------- FOOTER --------->
+          <footer class="footer">
+            <div class="footer__content">
+                <!-- Links das páginas -->
+                <nav class="footer__nav" aria-label="nav_footer_links">
+                    <a href="index.html" class="footer__link">Início</a>
+                    <a href="sobre.html" class="footer__link">Sobre</a>
+                    <a href="projetos.html" class="footer__link">Projetos</a>
+                    <a href="processing.html" class="footer__link">Processing</a>
+                    <a href="contacto.html" class="footer__link">Contactos</a>
+                </nav>
+
+                <p class="direitos__reservados">Resk12 2026</p>
+                <p class="direitos__reservados">&copy; Todos os direitos reservados.</p>
+                
+            </div>
+                
+        </footer>
+        <!---------------FIM FOOTER------------>
+        <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+        <!-- ========== Link js ========== -->
+        <script src="JS/Script.js"></script>
+
+
+        <!-- ========== Link p5js ========== -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+        <script src="JS/Script.js"></script>    
+    </body>
+</html>

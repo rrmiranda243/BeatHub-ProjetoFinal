@@ -26,9 +26,6 @@
         <!-- Ficheiros CSS -->
         <link rel="stylesheet" href="CSS/reset.css">
         <link rel="stylesheet" href="CSS/style.css">
-
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.css">
-
     </head>
 
 
@@ -48,7 +45,6 @@
                             <img src="Imagens/logo-white.svg" alt="Resk12">
                             <span class="site-title">Resk12</span>
                         </a>
-                       
                     </div>
 
                    
@@ -66,13 +62,13 @@
                 <div class="nav__menu" id="navMenu">
                     <ul class="nav__list">
                         <li>
-                            <a class="nav__link active" href="index.html" title="Página principal" rel="noopener noreferrer">Home</a>
+                            <a class="nav__link" href="index.html" title="Página principal" rel="noopener noreferrer">Home</a>
                         </li>
                         <li>
                             <a class="nav__link" href="sobre.html" title="Sobre" rel="noopener noreferrer">Sobre</a>
                         </li>
                         <li>
-                            <a class="nav__link" href="projetos.html" title="projetos" rel="noopener noreferrer">Projetos</a>
+                            <a class="nav__link active" href="projetos.html" title="projetos" rel="noopener noreferrer">Projetos</a>
                         </li>
                         <li>
                             <a class="nav__link" href="processing.html" title="Processing" rel="noopener noreferrer">Processing</a>
@@ -84,123 +80,65 @@
                 </div>
             </nav>
         </header>
-        
-
 
         <!-----------------------CONTEÚDO PRINCIPAL -------------------->
         <main id="mainContent">  <!-- 1 maain por pagina-->
-                <!-- Slider main container -->
-            <div class="swiper mySwiper">
-                <div class="swiper-wrapper">
-                            <!-- Slides -->
-                    <div class="swiper-slide"><img src="Imagens/logo-resk12-001.jpeg" alt="Resk12" class="galeria__img"></div>
 
-                    <div class="swiper-slide"><img src="Imagens/logo-resk12-002.jpeg" alt="Resk12" class="galeria__img"></div>
+                    <section class="projetos" aria-label="Projetos" id="sectionProjetos">
+                <div class="projetos__wrapper pageWidth">
+                    <h2 class="projetos__titulo">Album de Projetos</h2>
 
-                    <div class="swiper-slide"><img src="Imagens/logo-resk12-003.jpeg" alt="Resk12" class="galeria__img"></div>
+                    <div class="projetos__grid">
+
+                        <article class="projeto-card">
+                            <img src="Imagens/projetos-001.jpeg" alt="Lado dos ceus">
+                            <div class="projeto-card__info">
+                                <h3 class="projeto-card__nome">Coreia - Lado dos céus</h3>
+                                <p class="projeto-card__descricao">
+                                    Onde o céu é o limite, mas ainda existo eu, pinto até no espaço se deus quiser.
+                                </p>
+                                <p class="projeto-card__data">2017</p>
+                            </div>
+                        </article>
+
+                        <article class="projeto-card">
+                            <img src="Imagens/trabalhos-002.jpg" alt="NY">
+                            <div class="projeto-card__info">
+                                <h3 class="projeto-card__nome">Algures por NY</h3>
+                                <p class="projeto-card__descricao">
+                                    "New York" a cidade que nunca pára e a arte que nunca cresce, afinal é preciso ter tempo.
+                                </p>
+                                <p class="projeto-card__data">2018</p>
+                            </div>
+                        </article>
+
+                        <article class="projeto-card">
+                            <img src="Imagens/trabalhos-003.jpg" alt="Guiné">
+                            <div class="projeto-card__info">
+                                <h3 class="projeto-card__nome">Guiné</h3>
+                                <p class="projeto-card__descricao">
+                                    Adoro áfrica mas fazer worldwide e parar em Guiné para fazer o que mais gosto cria um sentimento de felicidade estrondoso.
+                                </p>
+                                <p class="projeto-card__data">2022</p>
+                            </div>
+                        </article>
+
+                        <article class="projeto-card">
+                            <img src="Imagens/trabalhos-004.jpg" alt="sintra">
+                            <div class="projeto-card__info">
+                                <h3 class="projeto-card__nome">Linha de sintra</h3>
+                                <p class="projeto-card__descricao">
+                                    O meu primeiro comboio (camelo) na linha de sintra, aos 15 anos, já se vão uns aninhos...
+                                </p>
+                                <p class="projeto-card__data">2004</p>
+                            </div>
+                        </article>
+
+                    </div>
                 </div>
-                <!-- If we need pagination -->
-                <div class="swiper-pagination"></div>
-
-                <!-- If we need navigation buttons -->
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-            </div>
-
-
-
-           <section aria-label="Galeria de artistas" id="sectionGaleria">
-                <div class="galeria__wrapper pageWidth"> 
- 
-                    <!-- Título da secção -->
-                    <h2 class="galeria__titulo">Resk12 - ART</h2>
- 
-                    <!-- Grelha da galeria -->
-                    <div class="galeria__grid">
- 
-                        <!-- Cartão 1 -->
-                        <article class="galeria__card">
-                            <!-- A tag <a> envolve APENAS a imagem — clicar no texto não redireciona -->
-                            <a href="projetos.html" class="galeria__img-link" title="Ver página do artista" rel="noopener noreferrer">
-                                <div class="galeria__img-container">
-                                    <img src="Imagens/resk12-001.jpg" alt="resk-001" class="galeria__img">
-                                </div>
-                            </a>
-                            <div class="galeria__info">
-                                <p class="galeria__nome">California</p>
-                                <p class="galeria__album">2024</p>
-                            </div>
-                        </article>
- 
-                        <!-- Card 2 -->
-                        <article class="galeria__card">
-                            <a href="projetos.html" class="galeria__img-link" title="Ver página do artista" rel="noopener noreferrer">
-                                <div class="galeria__img-container">
-                                    <img src="Imagens/resk12-002.jpg" alt="resk12-002" class="galeria__img">
-                                </div>
-                            </a>
-                            <div class="galeria__info">
-                                <p class="galeria__nome">França</p>
-                                <p class="galeria__album">2019</p>
-                            </div>
-                        </article>
- 
-                        <!-- Card 3 -->
-                        <article class="galeria__card">
-                            <a href="projetos.html" class="galeria__img-link" title="Ver página do artista" rel="noopener noreferrer">
-                                <div class="galeria__img-container">
-                                    <img src="Imagens/resk12-003.jfif" alt="resk12-003" class="galeria__img">
-                                </div>
-                            </a>
-                            <div class="galeria__info">
-                                <p class="galeria__nome">Brasil</p>
-                                <p class="galeria__album">2016</p>
-                            </div>
-                        </article>
-                    </div>
-                    <!--Fim Galeria-->
-                 </div>
             </section>
 
-            <section aria-label="Galeria de videos" id="sectionVideos">
-                <div class="galeriaVideos__wrapper pageWidth"> 
-                    <!-- Título da secção -->
-                    <h2 class="galeria__titulo">Resk12 - Videos</h2>
-                    <div class="galeriaVideos__grid">
-                        <article>
-                            <div class="galeria__video">
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/dUn1ErACDws?si=7mYyS704N0OWQjz2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                            </div>
-                                <div class="galeria__info">
-                                    <p class="galeria__nome">Graffiti Letters in the Economic Roller Style</p>
-                                    <p class="galeria__album">2024</p>
-                                </div>
-                        </article>
-                            <!--Card-2----Video-->
-                        <article>
-                            <div class="galeria__video">
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/2LeyldJfbxE?si=JRLM-1Wt5KYg2gc_&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                            </div>
-                                <div class="galeria__info">
-                                    <p class="galeria__nome">Daytime Outdoor Graffiti + Drone Shots</p>
-                                    <p class="galeria__album">2023</p>
-                                </div>
-                        </article>
-                        <!--Card-3----Video-->
-                        <article>
-                            <div class="galeria__video">
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/Bg3orCFfBYU?si=MDawd0tLqNfq6Jb9&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                            </div>
-                                <div class="galeria__info">
-                                    <p class="galeria__nome">Graffiti Subway Surfers</p>
-                                    <p class="galeria__album">2022</p>  
-                                </div>
-                        </article>
-                    </div>
-            </section>
-
-            <!--Corrosel Loop-->
-             <h2 class="galeria__titulo">Em Breve</h2>
+            <h2 class="projetos__titulo">Merchandising</h2>
 
             <section class="banner-artistas">
                 <div class="banner-artistas__track-wrapper">
@@ -262,15 +200,10 @@
                 </div>
             </section>
 
-            
-
-                    
-
+        
         </main>
-        <!-----------Fim Conteudo Principal MAIN------>
 
-
-        <!------------- FOOTER --------->
+           <!------------- FOOTER --------->
           <footer class="footer">
             <div class="footer__content">
                 <!-- Links das páginas -->
@@ -293,7 +226,5 @@
         <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
         <!-- ========== Link js ========== -->
         <script src="JS/Script.js"></script>
-
     </body>
-
 </html>

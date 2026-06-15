@@ -201,6 +201,7 @@ h6, .h6 { font-size: 1.2rem; }
   align-items: center;
   justify-content: space-between; /* logo à esquerda, menu à direita */
   height: var(--header-height);
+  
 }
 
 
@@ -223,21 +224,34 @@ h6, .h6 { font-size: 1.2rem; }
   }
 }
 
+/* =============================================
+   Nome/Titulo Site
+   ============================================= */
+.site-title {
+    display: flex;
+     align-items: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+
+}
+
 
 /* =============================================
    LOGO
    ============================================= */
 
 
-#headerLogo a img {
+#headerLogo a {
   height: 40px;
   width: auto;
-  display: block;
+  display: flex;
   transition: transform 0.3s ease;
+  gap: 1rem;
 }
 
-#headerLogo a img:hover {
-  transform: scale(1.15);
+#headerLogo a :hover {
+  transform: scale(1.05);
 }
 
 
@@ -399,7 +413,7 @@ h6, .h6 { font-size: 1.2rem; }
  
 /* Secção que contém toda a galeria */
 #sectionGaleria {
-  padding: 40px 40px 40px;
+  padding: 40px 60px 60px;
 }
  
 /* Título da secção */
@@ -495,8 +509,80 @@ h6, .h6 { font-size: 1.2rem; }
   margin: 0;
 }
 
+/* Galeria Video */
 
-/* banner-artistas */
+#sectionVideos {
+  padding: 0px 40px 40px;
+}
+
+.galeriaVideos__wrapper {
+    padding: 2rem 0;
+}
+
+.galeria__titulo {
+    margin-bottom: 1.5rem;
+}
+
+.galeriaVideos__grid {
+    display: grid;
+    grid-template-columns: 1fr; /* mobile: 1 por linha */
+    gap: 1.5rem;
+}
+
+/* Tablet: 2 por linha */
+@media (min-width: 600px) {
+    .galeriaVideos__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop: 3 por linha */
+@media (min-width: 992px) {
+    .galeriaVideos__grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.galeriaVideos__grid article {
+    display: flex;
+    flex-direction: column;
+}
+
+.galeria__video {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.galeria__video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.galeria__info {
+    margin-top: 0.5rem;
+}
+
+.galeria__nome {
+    font-weight: bold;
+    margin: 0;
+}
+
+.galeria__album {
+    margin: 0;
+    color: #777;
+}
+/* FIM---Galeria Video */
+
+
+
+
 .banner-artistas {
   padding: 2rem 0;
   overflow: hidden;
@@ -510,26 +596,29 @@ h6, .h6 { font-size: 1.2rem; }
 
 .banner-artistas__track {
   display: flex;
-  gap: 16px;
   width: max-content;
-  animation: banner-scroll 20s linear infinite;
+  animation: banner-pingpong 10s ease-in-out infinite;
 }
 
-@keyframes banner-scroll {     /*Velocidade do scroll*/
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-100%); } 
+@keyframes banner-pingpong {
+  0%, 100% {
+    transform: translateX(20px);
+  }
+  50% {
+    transform: translateX(-200px); /* ajusta este valor à distância que queres */
+  }
 }
 
 .banner-card {
-  width: 20%;
-  flex-shrink: 0;
-  text-align: center;
+  flex: 0 0 auto;
+  width: clamp(100px, 18vw, 150px);
   text-decoration: none;
+  margin-right: 40px;
 }
 
 .banner-card img {
-  width: auto;
-  height: 150px;
+  width: 100%;
+  height: clamp(100px, 18vw, 150px);
   object-fit: cover;
   border-radius: 8px;
   display: block;
@@ -540,6 +629,301 @@ h6, .h6 { font-size: 1.2rem; }
   margin-top: 8px;
   color: #fff;
 }
+ */
+/* =============================================
+                     Contactos
+   ============================================= */
+
+
+
+.contactos {
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  
+}
+
+.contactos__container {
+  display: flex;
+  background: #1c1c1c;
+  border-radius: 20px;
+  overflow: hidden;
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto;
+  width: min(1000px, 90%);
+  margin-bottom: 20px;
+}
+  
+
+
+/* imagem */
+.contactos__imagem {
+  flex: 1;
+}
+
+.contactos__imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* lado direito */
+.contactos__info {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  color: var(--secondary-color);
+}
+
+.contactos__info h2 {
+  margin: 0;
+  font-size: 28px;
+  color: var(--secondary-color);
+}
+
+.contactos__form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contactos__form input,
+.contactos__form textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+}
+
+.contactos__form button {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #5b5b5b;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contactos__form button:hover {
+  background: #004904;
+}
+
+/* dados */
+.contactos__dados {
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--secondary-color);
+}
+
+/* responsivo */
+@media (max-width: 768px) {
+  .contactos__container {
+    flex-direction: column;
+  }
+
+  .contactos__imagem {
+    height: 200px;
+  }
+}
+
+/* =============================================
+                     Sobre-Artista
+   ============================================= */
+
+.sobre {
+    padding: 3rem 0;
+}
+
+.sobre__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.sobre__imagem img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    display: block;
+}
+
+.sobre__titulo {
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+.sobre__descricao {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    color: var(--white-color);
+    
+}
+
+@media (min-width: 992px) {
+    .sobre__wrapper {
+        flex-direction: row;
+        align-items: center;
+        gap: 3rem;
+    }
+
+    .sobre__imagem {
+        flex: 1 1 40%;
+    }
+
+    .sobre__texto {
+        flex: 1 1 60%;
+    }
+}
+
+/* ===== Trabalhos mais populares ===== */
+.trabalhos {
+    padding: 3rem 0;
+    color: var(--secondary-color);
+    text-align: center;
+}
+
+.trabalhos__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    
+}
+
+.trabalhos__titulo {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+
+.trabalhos__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+@media (min-width: 600px) {
+    .trabalhos__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .trabalhos__wrapper {
+        flex-direction: row;
+        gap: 3rem;
+    }
+
+    .trabalhos__descricao {
+        flex: 1 1 35%;
+        text-align: left;
+    }
+
+    .trabalhos__grid {
+        flex: 1 1 65%;
+        grid-template-columns: repeat(2, 1fr);
+        text-align: center;
+    }
+}
+
+.trabalho-card img {
+    width: 100%;
+    height: clamp(120px, 20vw, 200px);
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+
+.trabalho-card__nome {
+    font-weight: bold;
+    margin: 0.5rem 0 0;
+}
+
+.trabalho-card__ano {
+    margin: 0;
+    color: #777;
+}
+
+
+/* =============================================
+                     Projetos
+   ============================================= */
+
+.projetos {
+    padding: 3rem 0;
+}
+
+.projetos__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.projetos__titulo {
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    text-align: center;
+    margin-bottom: 1rem;
+     color: var(--secondary-color);
+}
+
+.projetos__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(1.5rem, 3vw, 3rem);
+}
+
+@media (min-width: 600px) {
+    .projetos__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .projetos__grid {
+        gap: clamp(2rem, 4vw, 4rem);
+    }
+}
+
+.projeto-card img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+
+.projeto-card__info {
+    margin-top: 1rem;
+     color: var(--secondary-color);
+}
+
+.projeto-card__nome {
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    margin: 0 0 0.5rem;
+}
+
+.projeto-card__descricao {
+    line-height: 1.6;
+    margin: 0 0 0.5rem;
+     color: var(--secondary-color);
+}
+
+.projeto-card__data {
+    margin: 0;
+    color: #777;
+    font-weight: bold;
+}
+
+
+
+
+
 
 /* =============================================
                      FOOTER
@@ -590,5 +974,16 @@ h6, .h6 { font-size: 1.2rem; }
     font-size: 1rem;        
     color: #ffffff;            
     margin: 0;                 
+}
+
+/* =============================================
+                Relogio-p5js
+   ============================================= */
+
+.relogio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 0;
 }
 
