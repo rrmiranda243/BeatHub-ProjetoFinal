@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Resk12</title>
 
-        <meta name="author" content="Rodrigo Miranda"/>
+        <meta name="author" content="Rodrigo Miranda"/> <!-- Informações do autor do site -->
         <meta name="description" content="Portfólio" />
         <meta name="keywords" content="ESAD.CR, Licenciatura de Mulimédia, Projecto Final" />
 
@@ -26,7 +26,7 @@
         <!-- Ficheiros CSS -->
         <link rel="stylesheet" href="CSS/reset.css">
         <link rel="stylesheet" href="CSS/style.css">
-
+        <!-- Biblioteca do site onde está o Slider usado-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.css">
 
     </head>
@@ -46,7 +46,7 @@
                     <div id="headerLogo">
                         <a href="index.html" title="Resk12" rel="noopener noreferrer">
                             <img src="Imagens/logo-white.svg" alt="Resk12">
-                            <span class="site-title">Resk12</span>
+                            <span class="site-title">Resk12</span> 
                         </a>
                        
                     </div>
@@ -63,7 +63,7 @@
 
                 <!------------- Menu de navegação --------------->
                
-                <div class="nav__menu" id="navMenu">
+                <div class="nav__menu" id="navMenu">   <!--nav__link activate indicar qual pagina se encontra-->
                     <ul class="nav__list">
                         <li>
                             <a class="nav__link active" href="index.html" title="Página principal" rel="noopener noreferrer">Home</a>
@@ -89,7 +89,7 @@
 
         <!-----------------------CONTEÚDO PRINCIPAL -------------------->
         <main id="mainContent">  <!-- 1 maain por pagina-->
-                <!-- Slider main container -->
+                <!-- container onde fica o main slider -->
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
                             <!-- Slides -->
@@ -107,16 +107,16 @@
                 <div class="swiper-button-next"></div>
             </div>
 
+            <!--Secção Imagens-->
 
-
-           <section aria-label="Galeria de artistas" id="sectionGaleria">
+            <section aria-label="Galeria de artistas" id="sectionGaleria">  <!--Construção da galeria 3x1-->
                 <div class="galeria__wrapper pageWidth"> 
  
                     <!-- Título da secção -->
                     <h2 class="galeria__titulo">Resk12 - ART</h2>
  
                     <!-- Grelha da galeria -->
-                    <div class="galeria__grid">
+                    <div class="galeria__grid"> <!--Div resposavel pela Grid e posteriormente separar em x cards-->
  
                         <!-- Cartão 1 -->
                         <article class="galeria__card">
@@ -160,7 +160,9 @@
                     </div>
                     <!--Fim Galeria-->
                  </div>
-            </section>
+            </section> <!--Fim secção imagens-->
+
+            <!-- Secção de Videos-->
 
             <section aria-label="Galeria de videos" id="sectionVideos">
                 <div class="galeriaVideos__wrapper pageWidth"> 
@@ -188,7 +190,7 @@
                         </article>
                         <!--Card-3----Video-->
                         <article>
-                            <div class="galeria__video">
+                            <div class="galeria__video"> <!--Link incorporado do youtube-->
                                 <iframe width="560" height="315" src="https://www.youtube.com/embed/Bg3orCFfBYU?si=MDawd0tLqNfq6Jb9&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                             </div>
                                 <div class="galeria__info">
@@ -199,18 +201,20 @@
                     </div>
             </section>
 
-            <!--Corrosel Loop-->
+            <!--ideia-Corrosel mexer direita-esquerda em loop-->
              <h2 class="galeria__titulo">Em Breve</h2>
 
+
+            <!--Secção Roupa-->
             <section class="banner-artistas">
                 <div class="banner-artistas__track-wrapper">
                     <div class="banner-artistas__track">
-                        <!--Card---1-Roupa-->
+                        <!--Card--Roupa 10x1-->
                     <a href="projetos.html" class="banner-card">
                         <img src="Imagens/roupa-001.jpeg" alt="Roupa">
                         <p class="banner-card__name">Model 3 XL</p>
                     </a>
-                        <!--Card---2-Roupa-->
+                        <!--Card repetido-->
                     <a href="projetos.html" class="banner-card">
                         <img src="Imagens/roupa-002.jpeg" alt="Roupa">
                         <p class="banner-card__name">Model 2 L</p>
@@ -289,6 +293,8 @@
                 
         </footer>
         <!---------------FIM FOOTER------------>
+
+        <!---------------Slider------------>
         <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
         <!-- ========== Link js ========== -->
